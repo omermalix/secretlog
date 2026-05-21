@@ -3,116 +3,411 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secretlog - Privacy Policy</title>
+  <title>Secretlog — Privacy Policy</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-           background: #0c0820; color: #ccc; max-width: 720px;
-           margin: 0 auto; padding: 48px 24px; line-height: 1.8; }
-    h1 { color: #9c6dff; font-size: 32px; margin-bottom: 8px; }
-    h2 { color: #fff; font-size: 20px; margin: 40px 0 12px; }
-    p { margin-bottom: 16px; }
-    a { color: #9c6dff; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0c0820;
+      color: #c8c0d8;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(160deg, #1a0e38 0%, #0c0820 100%);
+      border-bottom: 1px solid #2a1a50;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #9c6dff, #5c25cc);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .effective-date {
+      display: inline-block;
+      background: #1e1040;
+      border: 1px solid #3a2060;
+      color: #9c6dff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-top: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── Intro card ── */
+    .intro-card {
+      background: #130c2a;
+      border: 1px solid #2a1a50;
+      border-left: 4px solid #9c6dff;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      color: #b8b0cc;
+      font-size: 15.5px;
+    }
+
+    .intro-card p + p { margin-top: 12px; }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .section-number {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #9c6dff22, #5c25cc22);
+      border: 1px solid #9c6dff55;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #9c6dff;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.2px;
+    }
+
+    .section p {
+      color: #b0a8c4;
+      margin-bottom: 14px;
+      font-size: 15.5px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── Bullet list ── */
+    .policy-list {
+      list-style: none;
+      margin: 16px 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #130c2a;
+      border: 1px solid #2a1a50;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 15px;
+      color: #b0a8c4;
+    }
+
+    .policy-list li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #9c6dff;
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* ── Info badge ── */
+    .info-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a0e38;
+      border: 1px solid #3a2060;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 14px;
+      color: #9c6dff;
+      margin: 12px 0 16px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #2a1a50, transparent);
+      margin: 0 0 48px;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: linear-gradient(135deg, #1a0e38, #130c2a);
+      border: 1px solid #3a2060;
+      border-radius: 20px;
+      padding: 36px;
+      text-align: center;
+    }
+
+    .contact-card h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: #9080a8;
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #9c6dff;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s;
+    }
+
+    .contact-email:hover { background: #7c4ddf; }
+
+    .response-time {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #6a5a80;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #080614;
+      border-top: 1px solid #1a1030;
+      text-align: center;
+      padding: 32px 24px;
+    }
+
+    footer .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: #9c6dff;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    footer .footer-tagline {
+      font-size: 13px;
+      color: #4a3a60;
+    }
+
+    a { color: #9c6dff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 26px; }
+      main { padding: 36px 16px 60px; }
+      .intro-card { padding: 20px; }
+      .contact-card { padding: 24px; }
+    }
   </style>
 </head>
 <body>
-  <h1>Secretlog</h1>
-  <p style="color:#888;"> Secretlog
 
-Privacy Policy
-Effective Date: May 21, 2026
+<header>
+  <div class="logo">
+    <div class="logo-icon">&#128274;</div>
+    <span class="logo-text">Secretlog</span>
+  </div>
+  <h1>Privacy Policy</h1>
+  <span class="effective-date">Effective Date: May 21, 2026</span>
+</header>
 
+<main>
 
+  <div class="intro-card">
+    <p>Thank you for using Secretlog. This Privacy Policy explains how Secretlog handles your information. We have designed Secretlog from the ground up to be a private, personal experience. We do not operate a server, we do not collect your data, and we do not share anything about you with anyone.</p>
+    <p>Please read this policy carefully. By using Secretlog, you agree to the practices described here.</p>
+  </div>
 
-Thank you for using Secretlog. This Privacy Policy explains how Secretlog dhandles your information. We have designed Secretlog from the ground up to be a private, personal experience. We do not operate a server, we do not collect your data, and we do not share anything about you with anyone.
+  <!-- 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>Who We Are</h2>
+    </div>
+    <p>Secretlog is an independent app that lets you record short video clips every hour and automatically compiles them into a private daily video diary. All data you create within the app stays on your device and in your personal Google Drive account. We are not a data company. We have no servers, no databases, and no analytics infrastructure.</p>
+  </div>
+  <div class="divider"></div>
 
-Please read this policy carefully. By using Secretlog, you agree to the practices described here.
+  <!-- 2 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>Information We Do Not Collect</h2>
+    </div>
+    <p>We do not collect, store, process, or transmit any of the following:</p>
+    <ul class="policy-list">
+      <li>Your name, email address, or profile photo (these are read locally from Google Sign-In for display purposes only)</li>
+      <li>Your video clips or daily vlogs</li>
+      <li>Your location or GPS data</li>
+      <li>Your device identifiers or advertising IDs</li>
+      <li>Your usage patterns, behavior, or app activity</li>
+      <li>Any analytics, crash reports, or diagnostic data</li>
+    </ul>
+    <p>No data from your use of Secretlog ever reaches our systems, because we have no systems to receive it.</p>
+  </div>
+  <div class="divider"></div>
 
+  <!-- 3 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>Google Sign-In</h2>
+    </div>
+    <p>Secretlog uses Google Sign-In to allow you to access your personal Google Drive for backup purposes. When you sign in with Google:</p>
+    <ul class="policy-list">
+      <li>We receive a temporary access token from Google that allows the app to read and write to your Google Drive on your behalf.</li>
+      <li>Your name, email address, and profile photo are displayed locally within the app. They are not stored on any server we control.</li>
+      <li>We request access only to the Google Drive App Data folder, which is a private, hidden folder that only Secretlog can access. No one else, including other apps and other Google users, can see this folder.</li>
+    </ul>
+    <p>You can revoke Google Sign-In access at any time by visiting your Google Account settings at <a href="https://myaccount.google.com" target="_blank">myaccount.google.com</a> and removing Secretlog from your connected apps.</p>
+  </div>
+  <div class="divider"></div>
 
+  <!-- 4 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>Your Videos and Data</h2>
+    </div>
+    <p>All video clips you record are stored in two places only:</p>
+    <ul class="policy-list">
+      <li>On your device, in the app's local storage.</li>
+      <li>In your personal Google Drive App Data folder, if you have signed in with Google and backup is enabled.</li>
+    </ul>
+    <p>We have no ability to access, view, or retrieve your videos. They belong entirely to you. If you delete the app or sign out, your local data is deleted from your device. Your Google Drive backup remains in your Drive until you choose to delete it.</p>
+    <p>You can delete your Drive backup at any time by going to Google Drive settings, selecting Manage Apps, finding Secretlog, and choosing to delete its data.</p>
+  </div>
+  <div class="divider"></div>
 
-1. Who We Are
-Secretlog is an independent app that lets you record short video clips every hour and automatically compiles them into a private daily video diary. All data you create within the app stays on your device and in your personal Google Drive account. We are not a data company. We have no servers, no databases, and no analytics infrastructure.
+  <!-- 5 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>No Third-Party Sharing</h2>
+    </div>
+    <p>We do not sell, rent, license, or share any of your information with any third party for any purpose, including advertising, analytics, or marketing. Secretlog contains no advertising SDKs, no analytics frameworks, and no third-party tracking tools.</p>
+    <p>The only third-party service the app interacts with is Google, and that interaction is solely to authenticate you and access your own Google Drive. Google's own Privacy Policy governs how Google handles your account data.</p>
+  </div>
+  <div class="divider"></div>
 
+  <!-- 6 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2>Data Security</h2>
+    </div>
+    <p>All communication between Secretlog and Google's services is encrypted using industry-standard HTTPS and TLS protocols. Your access token is stored securely on your device using encrypted storage and is never written to any external location other than your own Google Drive.</p>
+    <p>We follow security best practices in how we handle authentication tokens, and we never store credentials in plain text.</p>
+  </div>
+  <div class="divider"></div>
 
+  <!-- 7 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>Secretlog is not directed at children under the age of 13. We do not knowingly collect any personal information from children. If you believe a child under 13 has used the app, please contact us and we will take appropriate steps. Because we collect no data ourselves, there is nothing for us to delete on our end, but we can assist in guiding you through removing any Google Drive data associated with the account.</p>
+  </div>
+  <div class="divider"></div>
 
-2. Information We Do Not Collect
-We do not collect, store, process, or transmit any of the following:
+  <!-- 8 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <h2>Your Rights</h2>
+    </div>
+    <p>Depending on where you live, you may have rights regarding your personal data under laws such as the GDPR (European Union) or CCPA (California, USA). Because Secretlog does not collect or store any personal data on its own servers, most of these rights apply directly to Google's handling of your Google account data rather than to us.</p>
+    <p>For any data that exists on your device or in your Google Drive, you are already in full control and can delete it at any time within the app or through your Google account settings.</p>
+  </div>
+  <div class="divider"></div>
 
-•  Your name, email address, or profile photo (these are read locally from Google Sign-In for display purposes only)
-•  Your video clips or daily vlogs
-•  Your location or GPS data
-•  Your device identifiers or advertising IDs
-•  Your usage patterns, behavior, or app activity
-•  Any analytics, crash reports, or diagnostic data
-No data from your use of Secretlog ever reaches our systems, because we have no systems to receive it.
+  <!-- 9 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">9</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. If we make any meaningful changes, we will update the effective date at the top of this document and notify users through the app or through the app store listing. We encourage you to review this policy periodically.</p>
+    <p>Continued use of Secretlog after any changes constitutes your acceptance of the updated policy.</p>
+  </div>
+  <div class="divider"></div>
 
+  <!-- 10 Contact -->
+  <div class="contact-card">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, concerns, or requests related to this Privacy Policy or your privacy in general, we are happy to help.</p>
+    <a class="contact-email" href="mailto:softbots.contact@gmail.com">
+      &#9993;&nbsp; softbots.contact@gmail.com
+    </a>
+    <p class="response-time">We respond to all inquiries within 5 business days.</p>
+  </div>
 
+</main>
 
-3. Google Sign-In
-Secretlog uses Google Sign-In to allow you to access your personal Google Drive for backup purposes. When you sign in with Google:
+<footer>
+  <div class="footer-logo">Secretlog</div>
+  <div class="footer-tagline">Your life, private. &copy; 2026 Secretlog. All rights reserved.</div>
+</footer>
 
-•  We receive a temporary access token from Google that allows the app to read and write to your Google Drive on your behalf.
-•  Your name, email address, and profile photo are displayed locally within the app. They are not stored on any server we control.
-•  We request access only to the Google Drive App Data folder, which is a private, hidden folder that only Secretlog can access. No one else, including other apps and other Google users, can see this folder.
-You can revoke Google Sign-In access at any time by visiting your Google Account settings at myaccount.google.com and removing Secretlog from your connected apps.
-
-
-
-4. Your Videos and Data
-All video clips you record are stored in two places only:
-
-•  On your device, in the app's local storage.
-•  In your personal Google Drive App Data folder, if you have signed in with Google and backup is enabled.
-We have no ability to access, view, or retrieve your videos. They belong entirely to you. If you delete the app or sign out, your local data is deleted from your device. Your Google Drive backup remains in your Drive until you choose to delete it.
-
-You can delete your Drive backup at any time by going to Google Drive settings, selecting Manage Apps, finding Secretlog, and choosing to delete its data.
-
-
-
-5. No Third-Party Sharing
-We do not sell, rent, license, or share any of your information with any third party for any purpose, including advertising, analytics, or marketing. Secretlog contains no advertising SDKs, no analytics frameworks, and no third-party tracking tools.
-
-The only third-party service the app interacts with is Google, and that interaction is solely to authenticate you and access your own Google Drive. Google's own Privacy Policy governs how Google handles your account data.
-
-
-
-6. Data Security
-All communication between Secretlog and Google's services is encrypted using industry-standard HTTPS and TLS protocols. Your access token is stored securely on your device using encrypted storage and is never written to any external location other than your own Google Drive.
-
-We follow security best practices in how we handle authentication tokens, and we never store credentials in plain text.
-
-
-
-7. Children's Privacy
-Secretlog is not directed at children under the age of 13. We do not knowingly collect any personal information from children. If you believe a child under 13 has used the app, please contact us and we will take appropriate steps. Because we collect no data ourselves, there is nothing for us to delete on our end, but we can assist in guiding you through removing any Google Drive data associated with the account.
-
-
-
-8. Your Rights
-Depending on where you live, you may have rights regarding your personal data under laws such as the GDPR (European Union) or CCPA (California, USA). Because Secretlog does not collect or store any personal data on its own servers, most of these rights apply directly to Google's handling of your Google account data rather than to us.
-
-For any data that exists on your device or in your Google Drive, you are already in full control and can delete it at any time within the app or through your Google account settings.
-
-
-
-9. Changes to This Policy
-We may update this Privacy Policy from time to time. If we make any meaningful changes, we will update the effective date at the top of this document and notify users through the app or through the app store listing. We encourage you to review this policy periodically.
-
-Continued use of Secretlog after any changes constitutes your acceptance of the updated policy.
-
-
-
-10. Contact Us
-If you have any questions, concerns, or requests related to this Privacy Policy or your privacy in general, please contact us at:
-
-
-Secretlog Support
-Email: softbots.contact@gmail.com
-
-We will do our best to respond to all inquiries within 5 business days.
-
-
-
-Secretlog — Your life, private.
-</p>
 </body>
 </html>
